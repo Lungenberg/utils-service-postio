@@ -46,4 +46,5 @@ public class ActionLog {
     @Column(name = "service", nullable = false, updatable = false)
     @Convert(converter = PostioServiceConverter.class)
     private PostioService service;
+
 }

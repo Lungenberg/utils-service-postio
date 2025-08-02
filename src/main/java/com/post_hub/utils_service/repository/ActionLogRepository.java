@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface ActionLogRepository extends JpaRepository<ActionLog, Integer>, JpaSpecificationExecutor<ActionLog> {
 
-    Optional<ActionLog> finByIdAndUserId(Integer id, Integer userId);
+    Optional<ActionLog> findByIdAndUserId(Integer logId, Integer userId);
     // на тот случай, если пользователь будет получать только свои логи
 
 }

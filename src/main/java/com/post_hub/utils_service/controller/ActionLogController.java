@@ -2,10 +2,13 @@ package com.post_hub.utils_service.controller;
 
 import com.post_hub.utils_service.model.constant.ApiLogMessage;
 import com.post_hub.utils_service.model.dto.ActionLogDTO;
+import com.post_hub.utils_service.model.request.ActionLogIsReadRequest;
+import com.post_hub.utils_service.model.request.ActionLogUpdateResultDTO;
 import com.post_hub.utils_service.model.response.PaginationResponse;
 import com.post_hub.utils_service.model.response.UtilsResponse;
 import com.post_hub.utils_service.service.ActionLogService;
 import com.post_hub.utils_service.utils.ApiUtils;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.Response;
@@ -43,4 +46,13 @@ public class ActionLogController {
 
         return ResponseEntity.ok(response);
     }
+
+    @PutMapping("${end.point.markAsRead}")
+    public ResponseEntity<UtilsResponse<ActionLogUpdateResultDTO>> setIsReadEqualsTrue(
+            @RequestBody @Valid ActionLogIsReadRequest request) {
+        log.trace(ApiLogMessage.NAME_OF_CURRENT_METHOD.getValue(), ApiUtils.getMethodName());
+
+        return ResponseEntity.ok(actionLogService.setIsReadEqualsTrue(request));
+    }
+
 }

@@ -14,4 +14,5 @@ public final class ApiConstants {
     public static final String DEFAULT_WHITESPACES_BEFORE_STACK_TRACE = "        ";
     public static final String SECURITY_PACKAGE_NAME = "org.springframework.security";
     public static final String DASH = "-";
+    public static final String TIME_ZONE_PACKAGE_NAME = "com.post_hub.timezone";
 }

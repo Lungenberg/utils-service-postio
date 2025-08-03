@@ -7,12 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 
 import java.util.TimeZone;
 
-@SpringBootApplication(
-        exclude = {
-                SecurityAutoConfiguration.class,
-                UserDetailsServiceAutoConfiguration.class
-        }
-)
+@SpringBootApplication
 public class UtilsServiceApplication {
 
     public static void main(String[] args) {

@@ -1,6 +1,7 @@
 package com.post_hub.utils_service.service.impl;
 
 import com.post_hub.utils_service.entity.ActionLog;
+import com.post_hub.utils_service.kafka.model.UtilMessage;
 import com.post_hub.utils_service.mapper.ActionLogMapper;
 import com.post_hub.utils_service.model.constant.ApiErrorMessage;
 import com.post_hub.utils_service.model.dto.ActionLogDTO;
@@ -107,4 +108,11 @@ public class ActionLogsServiceImpl implements ActionLogService {
         );
         // упаковываем результат в DTO
     }
+
+    @Override
+    public ActionLog saveLogFromKafkaMessage(UtilMessage message) {
+        ActionLog actionLog = actionLogMapper.mapKafkaMessageToEntity(message);
+        return actionLogRepository.save(actionLog);
+    }
+
 }

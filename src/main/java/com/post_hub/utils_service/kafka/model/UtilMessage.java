@@ -1,4 +1,4 @@
-package com.post_hub.utils_service.kafka.model.utils;
+package com.post_hub.utils_service.kafka.model;
 
 import com.post_hub.utils_service.model.enums.ActionType;
 import com.post_hub.utils_service.model.enums.PostioService;
@@ -10,12 +10,12 @@ import java.io.Serializable;
 
 @Data
 @Builder
-public class LogMessage implements Serializable {
+public class UtilMessage implements Serializable {
 
     private Integer userId;
     private ActionType actionType;
     private PriorityType priorityType;
-    private PostioService postioService;
+    private PostioService service;
     private String message;
 
 }

@@ -110,6 +110,7 @@ public class ActionLogsServiceImpl implements ActionLogService {
     }
 
     @Override
+    @Transactional
     public ActionLog saveLogFromKafkaMessage(UtilMessage message) {
         ActionLog actionLog = actionLogMapper.mapKafkaMessageToEntity(message);
         return actionLogRepository.save(actionLog);

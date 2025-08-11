@@ -25,6 +25,7 @@ public class MessageConsumer {
     static {
         UNMARSHALLER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
+    // игнорируем неизвестные поля в приходящем JSON, чтобы не падать при расширениях схемы.
 
     @KafkaListener(topics = "iam_topic_for_demo", groupId = "utils_service")
     public void handleIamMessage(ConsumerRecord<String, String> consumerRecord, Acknowledgment acknowledgment) {

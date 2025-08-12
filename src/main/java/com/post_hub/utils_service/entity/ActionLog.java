@@ -27,7 +27,7 @@ public class ActionLog {
     private Integer userId;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(name = "is_read", nullable = false, updatable = false)
     private Boolean isRead;

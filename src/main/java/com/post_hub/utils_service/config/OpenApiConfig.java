@@ -41,7 +41,7 @@ public class OpenApiConfig {
     @Value("${swagger.servers.first:#{null}")
     private String firstServer;
 
-    @Value("${swagger.servers.second:#{null}")
+    @Value("${swagger.servers.second}")
     private String secondServer;
 
     @Bean
